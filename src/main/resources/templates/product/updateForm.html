@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상품수정</title>
+</head>
+<body>
+<div class="wrap">
+  <h3>상품수정</h3>
+  <div>
+    <form action="" method="post" th:object="${form}">
+      <div>
+        <label for="" >상품번호</label>
+        <input type="text" name="productId" readonly th:field="*{productId}">
+      </div>
+      <div>
+        <label for="">상품명</label>
+        <input type="text" name="pname" th:field="*{pname}">
+      </div>
+      <div>
+        <label for="">수량</label>
+        <input type="text" name="quantity" th:field="*{quantity}">
+      </div>
+      <div>
+        <label for="">가격</label>
+        <input type="text" name="price" th:field="*{price}">
+      </div>
+      <div>
+        <button type="submit" id="btnSave">저장</button>
+        <button type="button" id="btnCancel">취소</button>
+        <button type="button" id="btnFindAll">목록</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+  const $btnSave = document.getElementById('btnSave');
+  const $btnCancel = document.getElementById('btnCancel');
+  const $btnFindAll = document.getElementById('btnFindAll');
+
+  const btnCancel_h = e => history.back();
+  const btnFindAll_h = e=> location.href = `/products`;
+
+  $btnCancel.addEventListener('click',btnCancel_h, false);
+  $btnFindAll.addEventListener('click',btnFindAll_h, false);
+
+</script>
+</body>
+</html>
