@@ -1,5 +1,6 @@
 package com.kh.myproduct.web.rest;
 
+
 import lombok.Data;
 
 @Data
